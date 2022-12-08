@@ -110,8 +110,8 @@ Use the addReview function below to do the following:
 
 function addReview(/*Your Code Here */reviews, name, rating, feedback){
   /*Your Code Here */
-  // reviews.push({name: name, rating:rating, feedback: feedback})
-  reviews[reviews.length] = {name: name, rating:rating, feedback: feedback}
+  reviews.push({name: name, rating:rating, feedback: feedback})
+  // reviews[reviews.length] = {name: name, rating:rating, feedback: feedback}
   return reviews
 }
 
@@ -150,11 +150,13 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(/*Your code here*/) {
+function getLastReview(/*Your code here*/reviews) {
   /*Your code here*/
+  const last = reviews.pop()
+  return `${last.name} gave the restaurant a ${last.rating} star review, and their feedback was: ${last.feedback}`
 } 
 
-
+console.log(getLastReview(reviews))
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
 
