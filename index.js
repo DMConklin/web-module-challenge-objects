@@ -110,7 +110,8 @@ Use the addReview function below to do the following:
 
 function addReview(/*Your Code Here */reviews, name, rating, feedback){
   /*Your Code Here */
-  reviews.push({name: name, rating:rating, feedback: feedback})
+  // reviews.push({name: name, rating:rating, feedback: feedback})
+  reviews[reviews.length] = {name: name, rating:rating, feedback: feedback}
   return reviews
 }
 
@@ -127,9 +128,12 @@ Use the getReviewByIndex function below to do the following:
 */
 
 
-function getReviewByIndex(/*Your code here*/) {
+function getReviewByIndex(/*Your code here*/reviews, index) {
   /*Your code here*/
+  return `${reviews[index].name} gave the restaurant a ${reviews[index].rating} star review, and their feedback was: ${reviews[index].feedback}`
 }
+
+console.log(getReviewByIndex(reviews, 1))
 
   
 
